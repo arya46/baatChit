@@ -32,14 +32,14 @@ app.wss = new Server({
 });
 
 
-// static www files use express
-const wwwPath = path.join(__dirname, 'www');
+// // static www files use express
+// const wwwPath = path.join(__dirname, 'www');
 
-app.use('/', express.static(wwwPath));
+// app.use('/', express.static(wwwPath));
 
-if (process.env.NODE_ENV === "production") {
-	app.use(express.static("client/build"));
-}
+// if (process.env.NODE_ENV === "production") {
+	app.use('/', express.static(__dirname, '../..', 'client/build'));
+// }
 
 // Connect to Mongo Database
 
