@@ -38,7 +38,7 @@ app.wss = new Server({
 // app.use('/', express.static(wwwPath));
 
 // if (process.env.NODE_ENV === "production") {
-	app.use('/', express.static(__dirname, '../..', 'app/build'));
+	app.use('/', express.static(__dirname, '../', 'app/build'));
 // }
 
 // Connect to Mongo Database
