@@ -37,6 +37,10 @@ const wwwPath = path.join(__dirname, 'www');
 
 app.use('/', express.static(wwwPath));
 
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static("client/build"));
+}
+
 // Connect to Mongo Database
 
 new Database().connect().then((db) => {
