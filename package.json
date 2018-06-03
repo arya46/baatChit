@@ -2,13 +2,14 @@
   "name": "baatChit",
   "version": "1.0.0",
   "description": "Use websocket in application for real time messaging.",
-  "main": "index.js",
+  "main": "src",
   "scripts": {
     "dev": "nodemon -w src --exec \"babel-node src --presets env,stage-0\"",
     "build": "babel src -s -D -d dist --presets env,stage-0",
     "start": "node src",
     "prestart": "npm run -s build",
-    "test": "eslint src"
+    "test": "eslint src",
+    "heroku-postbuild": "cd app && npm install && npm run build"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
