@@ -24,7 +24,9 @@ export default class AppRouter {
 
         console.log("App Router works!");
 
-
+        app.get('/a', (req, res, next) => {
+            console.log('Success')
+        });
 
         /**
          * @endpoint: /api/users
